@@ -41,7 +41,7 @@ function App() {
         <div style={{ marginBottom: 32 }}>
           <div className="section-label mb-1">Athlete</div>
           <h1 style={{ fontFamily: 'Bebas Neue, cursive', fontSize: '3rem', letterSpacing: '0.05em', color: '#f1f5f9', margin: 0, lineHeight: 1 }}>
-            YOUR NAME
+            Jakub Kranz
           </h1>
           <div style={{ fontFamily: 'JetBrains Mono', fontSize: '0.7rem', color: '#475569', marginTop: 4 }}>
             Cross Country · Distance Runner · Chicago, IL
