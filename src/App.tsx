@@ -38,7 +38,7 @@ function App() {
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
             <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#22c55e' }} />
-            <span style={{ fontFamily: 'JetBrains Mono', fontSize: '0.7rem', color: 'var(--text-muted)' }}>2026 SEASON</span>
+            <span style={{ fontFamily: 'JetBrains Mono', fontSize: '0.7rem', color: 'var(--text-muted)' }}>2026 SUMMER TRAINING</span>
             <button
               onClick={() => setDarkMode(!darkMode)}
               style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: 8, padding: '6px 8px', cursor: 'pointer', display: 'flex', alignItems: 'center', color: 'var(--text-primary)' }}
@@ -51,15 +51,18 @@ function App() {
 
       <main style={{ maxWidth: 1100, margin: '0 auto', padding: '32px 24px' }} className="main-content">
         {/* Athlete name */}
-        <div style={{ marginBottom: 32 }}>
+      <div style={{ marginBottom: 32, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <div>
           <div className="section-label mb-1">Athlete</div>
           <h1 style={{ fontFamily: 'Bebas Neue, cursive', fontSize: '3rem', letterSpacing: '0.05em', color: 'var(--text-primary)', margin: 0, lineHeight: 1 }}>
             Jakub Kranz
           </h1>
           <div style={{ fontFamily: 'JetBrains Mono', fontSize: '0.7rem', color: 'var(--text-muted)', marginTop: 4 }}>
-            Cross Country · Distance Runner · Chicago, IL
+            Cross Country · Distance Runner · Downers Grove, IL
           </div>
         </div>
+        <img src="/xc-training-log/south-logo.png" alt="Downers Grove South" className="school-logo" style={{ height: 48, opacity: 0.85 }} />
+      </div>
 
         {/* Stats row */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 12, marginBottom: 20 }} className="stats-grid">

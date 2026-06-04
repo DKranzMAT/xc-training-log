@@ -122,3 +122,7 @@ body::before {
   stroke: #1e293b;
 }
 .recharts-tooltip-wrapper { outline: none; }
+
+:root[data-theme="light"] .school-logo {
+  filter: invert(1) sepia(1) saturate(3) hue-rotate(185deg) brightness(0.4);
+}
