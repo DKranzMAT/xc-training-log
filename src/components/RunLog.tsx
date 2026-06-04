@@ -35,8 +35,7 @@ export function RunLog() {
             <div className="flex items-start justify-between gap-4">
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 mb-1">
-                  <span style={{ fontFamily: 'Bebas Neue, cursive', fontSize: '1.15rem', color: '#f1f5f9', letterSpacing: '0.03em' }}>
-                    {run.distance} mi
+                  <span style={{ fontFamily: 'Bebas Neue, cursive', fontSize: '1.15rem', color: 'var(--text-primary)', letterSpacing: '0.03em' }}>                    {run.distance} mi
                   </span>
                   <span className="pace-badge">{formatPace(run.pace)}</span>
                   {run.isPR && <span className="pr-badge">🏆 PR</span>}
@@ -57,7 +56,7 @@ export function RunLog() {
                 )}
               </div>
               <div style={{ textAlign: 'right', flexShrink: 0 }}>
-                <div style={{ fontFamily: 'JetBrains Mono', fontSize: '0.85rem', color: '#94a3b8' }}>{formatDuration(run.duration)}</div>
+                <div style={{ fontFamily: 'JetBrains Mono', fontSize: '0.85rem', color: 'var(--text-muted)' }}>{formatDuration(run.duration)}</div>
                 <div style={{ fontSize: '0.65rem', color: '#475569', marginTop: 2 }}>
                   {new Date(run.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
                 </div>

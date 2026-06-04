@@ -1,10 +1,11 @@
 import './index.css';
+import { useState, useEffect } from 'react';
 import { runs, weeklyMileage } from './data/mockData';
 import { StatCard } from './components/StatCard';
 import { MileageChart } from './components/MileageChart';
 import { PRBoard } from './components/PRBoard';
 import { RunLog } from './components/RunLog';
-import { Activity } from 'lucide-react';
+import { Activity, Sun, Moon } from 'lucide-react';
 
 function formatPace(seconds: number): string {
   const m = Math.floor(seconds / 60);
@@ -13,6 +14,12 @@ function formatPace(seconds: number): string {
 }
 
 function App() {
+  const [darkMode, setDarkMode] = useState(true);
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', darkMode ? 'dark' : 'light');
+  }, [darkMode]);
+
   const totalMiles = runs.reduce((sum, r) => sum + r.distance, 0).toFixed(1);
   const avgPace = Math.round(runs.reduce((sum, r) => sum + r.pace, 0) / runs.length);
   const thisWeekMiles = weeklyMileage[weeklyMileage.length - 1].miles;
@@ -21,17 +28,23 @@ function App() {
   return (
     <div style={{ minHeight: '100vh', background: 'var(--bg-primary)' }}>
       {/* Header */}
-      <header style={{ borderBottom: '1px solid #1e293b', padding: '0 24px' }}>
+      <header style={{ borderBottom: '1px solid var(--border)', padding: '0 24px' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 60 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-            <Activity size={18} color="#d9932a" />
-            <span style={{ fontFamily: 'Bebas Neue, cursive', fontSize: '1.5rem', letterSpacing: '0.08em', color: '#f1f5f9' }}>
+            <Activity size={18} color="var(--accent-gold)" />
+            <span style={{ fontFamily: 'Bebas Neue, cursive', fontSize: '1.5rem', letterSpacing: '0.08em', color: 'var(--text-primary)' }}>
               XC TRAINING LOG
             </span>
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
             <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#22c55e' }} />
-            <span style={{ fontFamily: 'JetBrains Mono', fontSize: '0.7rem', color: '#64748b' }}>2026 SEASON</span>
+            <span style={{ fontFamily: 'JetBrains Mono', fontSize: '0.7rem', color: 'var(--text-muted)' }}>2026 SEASON</span>
+            <button
+              onClick={() => setDarkMode(!darkMode)}
+              style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: 8, padding: '6px 8px', cursor: 'pointer', display: 'flex', alignItems: 'center', color: 'var(--text-primary)' }}
+            >
+              {darkMode ? <Sun size={15} /> : <Moon size={15} />}
+            </button>
           </div>
         </div>
       </header>
@@ -40,10 +53,10 @@ function App() {
         {/* Athlete name */}
         <div style={{ marginBottom: 32 }}>
           <div className="section-label mb-1">Athlete</div>
-          <h1 style={{ fontFamily: 'Bebas Neue, cursive', fontSize: '3rem', letterSpacing: '0.05em', color: '#f1f5f9', margin: 0, lineHeight: 1 }}>
+          <h1 style={{ fontFamily: 'Bebas Neue, cursive', fontSize: '3rem', letterSpacing: '0.05em', color: 'var(--text-primary)', margin: 0, lineHeight: 1 }}>
             Jakub Kranz
           </h1>
-          <div style={{ fontFamily: 'JetBrains Mono', fontSize: '0.7rem', color: '#475569', marginTop: 4 }}>
+          <div style={{ fontFamily: 'JetBrains Mono', fontSize: '0.7rem', color: 'var(--text-muted)', marginTop: 4 }}>
             Cross Country · Distance Runner · Chicago, IL
           </div>
         </div>

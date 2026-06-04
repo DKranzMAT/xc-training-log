@@ -4,6 +4,17 @@
 @tailwind components;
 @tailwind utilities;
 
+:root[data-theme="light"] {
+  --bg-primary: #e8edf5;
+  --bg-card: #f0f4fa;
+  --bg-card-hover: #e2e8f3;
+  --accent-gold: #c47318;
+  --accent-green: #16a34a;
+  --text-primary: #1a3a6b;
+  --text-muted: #4a5a75;
+  --border: #c0ccdd;
+}
+
 :root {
   --bg-primary: #0a0f1a;
   --bg-card: #111827;
