@@ -87,6 +87,19 @@ body::before {
   color: var(--text-muted);
 }
 
+/* Responsive grid */
+@media (max-width: 640px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .chart-pr-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .main-content {
+    padding: 20px 16px !important;
+  }
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg-primary); }

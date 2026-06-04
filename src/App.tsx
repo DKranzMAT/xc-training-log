@@ -36,7 +36,7 @@ function App() {
         </div>
       </header>
 
-      <main style={{ maxWidth: 1100, margin: '0 auto', padding: '32px 24px' }}>
+      <main style={{ maxWidth: 1100, margin: '0 auto', padding: '32px 24px' }} className="main-content">
         {/* Athlete name */}
         <div style={{ marginBottom: 32 }}>
           <div className="section-label mb-1">Athlete</div>
@@ -49,7 +49,7 @@ function App() {
         </div>
 
         {/* Stats row */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 12, marginBottom: 20 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 12, marginBottom: 20 }} className="stats-grid">
           <StatCard label="Total Miles" value={totalMiles} sub="logged this season" accent="gold" />
           <StatCard label="This Week" value={`${thisWeekMiles} mi`} sub="current week" accent="default" />
           <StatCard label="Avg Pace" value={formatPace(avgPace)} sub="across all runs" accent="default" />
@@ -57,7 +57,7 @@ function App() {
         </div>
 
         {/* Chart + PRs */}
-        <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: 12, marginBottom: 20 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: 12, marginBottom: 20 }} className="chart-pr-grid">
           <MileageChart />
           <PRBoard />
         </div>
