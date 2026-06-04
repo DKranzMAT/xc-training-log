@@ -109,6 +109,9 @@ body::before {
   .main-content {
     padding: 20px 16px !important;
   }
+  .athlete-logo {
+    height: 23px !important;
+  }
 }
 
 /* Custom scrollbar */

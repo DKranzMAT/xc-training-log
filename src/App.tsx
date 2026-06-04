@@ -61,7 +61,7 @@ function App() {
             Cross Country · Distance Runner · Downers Grove, IL
           </div>
         </div>
-        <img src="/xc-training-log/south-logo.png" alt="Downers Grove South" className="school-logo" style={{ height: 48, opacity: 0.85 }} />
+        <img src="/xc-training-log/south-logo.png" alt="Downers Grove South" className="school-logo athlete-logo" style={{ height: 48, opacity: 0.85 }} />
       </div>
 
         {/* Stats row */}
